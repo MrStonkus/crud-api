@@ -1,6 +1,17 @@
 import { v4 as uuidv4 } from 'uuid'
 
-let users = []
+import fs from 'fs'
+
+// let rawdata = fs.readFileSync('../controlers/users.json')
+let rawdata = fs.readFile('../controlers/users.json', 'utf8', (err, data) => {
+  console.log(data);
+})
+
+// let student = JSON.parse(rawdata)
+// console.log(student)
+
+
+// let users = []
 
 export const getUsers = (req, res) => {
 	console.log(users)
