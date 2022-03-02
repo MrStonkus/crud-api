@@ -1,5 +1,6 @@
 import expres from "express"
 import {
+	checkDBFile,
 	getUsers,
 	addUser,
 	findUser,
@@ -8,6 +9,9 @@ import {
 } from '../controlers/users.js'
 
 const router = expres.Router()
+
+// create new DB file if not exist
+checkDBFile()
 
 // get all users
 router.get('/', getUsers)

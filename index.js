@@ -1,17 +1,20 @@
 import express from "express"
 import userRoutes from './routes/users.js'
 
+
 const app = express()
 const PORT = 3000
 
-// app.use(cors())
-
+// this help get req.body as object
 app.use(express.json())
 
-// routers
-app.use('/users', userRoutes)
 
+// routers
 app.get('/', (req, res) => res.send('Hello from server'))
+app.use('/users', userRoutes)
 
 
 app.listen(PORT, () => console.log(`listening on port http://localhost:${PORT}`))
+
+
+
